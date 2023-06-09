@@ -17,19 +17,21 @@ public class CarController {
     private CarService carService;
 
     @GetMapping("/all")     // ->>>>> localhost.../api/Car/all
-    public List<Car> getAll(){
-        return carService.getAll();
-    }
+    public List<Car> getAll(){return carService.getAll();}
 
     @GetMapping("/{id}")  // ->>>>>> localhost.../api/Car/12
-    public Optional<Car> getCar(int id){
-        return carService.getCar(id);
-    }
+    public Optional<Car> getCar(int id){return carService.getCar(id);}
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Car save(@RequestBody Car car){
-        return carService.save(car);
-    }
+    public Car save(@RequestBody Car car){return carService.save(car);}
 
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Car update(@RequestBody Car car) {return carService.update(car);}
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable int id){return carService.delete(id);}
+    
 }

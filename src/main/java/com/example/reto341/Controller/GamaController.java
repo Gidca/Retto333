@@ -22,14 +22,19 @@ public class GamaController {
     }
 
     @GetMapping("/{id}")  // ->>>>>> localhost.../api/Gama/12
-    public Optional<Gama> getGama(int id){
-        return gamaService.getGama(id);
-    }
+    public Optional<Gama> getGama(int id){return gamaService.getGama(id);}
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Gama save(@RequestBody Gama Gama){
-        return gamaService.save(Gama);
-    }
+    public Gama save(@RequestBody Gama Gama){return gamaService.save(Gama);}
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Gama update(@RequestBody Gama gama) {return gamaService.update(gama);}
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable int id){return gamaService.delete(id);}
+
 
 }
