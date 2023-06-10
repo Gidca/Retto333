@@ -1,6 +1,5 @@
 package com.example.reto341.Controller;
 
-import com.example.reto341.Model.Car;
 import com.example.reto341.Model.Score;
 import com.example.reto341.Service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
